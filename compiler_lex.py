@@ -1,10 +1,8 @@
 import ply.lex as lex
 
 def find_column(input_str, token):
-    """Calcula a coluna do token baseada na última quebra de linha."""
     line_start = input_str.rfind('\n', 0, token.lexpos) + 1
     return (token.lexpos - line_start) + 1
-
 
 tokens = [
     'ID',
@@ -29,19 +27,16 @@ reserved = {
     'mao':      'KW_MAO',
     'dupla':    'KW_DUPLA',
     'unica':    'KW_UNICA',
-    'sinal':    'KW_SINAL',
     'verde':    'KW_VERDE',
     'vermelho': 'KW_VERMELHO',
 }
 
 tokens += list(reserved.values())
 
-
 t_CHAVE_ESQ     = r'\{'
 t_CHAVE_DIR     = r'\}'
 t_DOIS_PONTOS   = r':'
 t_PONTO_VIRGULA = r';'
-
 
 def t_COMMENT_MULTILINE(t):
     r'/\*(.|\n)*?\*/'
@@ -51,7 +46,6 @@ def t_COMMENT_MULTILINE(t):
 def t_COMMENT(t):
     r'//.*'
     pass
-
 
 def t_STRING(t):
     r'"[^"\n]*"'
@@ -63,7 +57,6 @@ def t_string_mf(t):
     col = find_column(t.lexer.lexdata, t)
     print(f"Erro Léxico: String mal formada '{t.value}'. Linha {t.lineno}, Coluna {col}")
     return t
-
 
 def t_MEDIDA_M(t):
     r'[0-9]+m(?![a-zA-Z_À-ÿ])'
@@ -79,12 +72,10 @@ def t_variavel_mf(t):
     print(f"Erro Léxico: Variável ou número mal formado '{t.value}'. Linha {t.lineno}, Coluna {col}")
     return t
 
-
 def t_ID(t):
     r'[a-zA-ZÀ-ÿ_][a-zA-Z0-9À-ÿ_]*'
     t.type = reserved.get(t.value.lower(), 'ID')
     return t
-
 
 t_ignore = ' \t'
 
@@ -96,6 +87,5 @@ def t_error(t):
     col = find_column(t.lexer.lexdata, t)
     print(f"Erro Léxico: Caractere ilegal '{t.value[0]}'. Linha {t.lineno}, Coluna {col}")
     t.lexer.skip(1)
-
 
 lexer = lex.lex()
