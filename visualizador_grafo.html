@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Visualizador Enxuto - Grafo de Tráfego</title>
+  <title>Visualizador - Grafo de Tráfego</title>
   <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
   <style>
     body { font-family: Arial, sans-serif; margin: 20px; background: #f4f4f9; }
@@ -13,94 +13,105 @@
 </head>
 <body>
 
-  <h2>Grafo de Tráfego (Versão Enxuta)</h2>
-  <textarea id="json-input" placeholder="Cole aqui o conteúdo do seu arquivo .json..."></textarea>
-  <button onclick="gerarGrafo()">Gerar Grafo</button>
+<h2>Grafo de Tráfego</h2>
+<textarea id="json-input" placeholder="Cole aqui o conteúdo do seu arquivo .json..."></textarea>
+<button onclick="gerarGrafo()">Gerar Grafo</button>
+<div id="grafo-container"></div>
 
-  <div id="grafo-container"></div>
+<script>
+  // Formata o objeto de sinal em texto legível (ex: 🚦 45v/30r)
+  function formatarSinal(cfg, globais) {
+    if (!cfg) return "";
+    if (cfg.referencia) {
+      const g = globais[cfg.referencia];
+      if (g) return ` [🚦 ${g.verde_s}v/${g.vermelho_s}r]`;
+      return ` [🚦 ${cfg.referencia}]`;
+    }
+    return ` [🚦 ${cfg.verde_s}v/${cfg.vermelho_s}r]`;
+  }
 
-  <script>
-    // Função para traduzir o objeto do sinal em texto (ex: [🚦 45v/30r])
-    function formatarSinal(cfg, globais) {
-      if (!cfg) return "";
-      if (cfg.referencia) {
-        const g = globais[cfg.referencia];
-        if (g) return ` [🚦 ${g.verde_s}v/${g.vermelho_s}r]`;
-        return ` [🚦 ${cfg.referencia}]`;
+  function gerarGrafo() {
+    const textoJson = document.getElementById('json-input').value.trim();
+    if (!textoJson) {
+      alert("Cole o conteúdo do arquivo .json antes de gerar o grafo.");
+      return;
+    }
+
+    let data;
+    try {
+      data = JSON.parse(textoJson);
+    } catch (e) {
+      alert("JSON inválido: " + e.message);
+      return;
+    }
+
+    const sinaisGlobais = data.sinais_globais || {};
+    const nodes = new vis.DataSet();
+    const edges = new vis.DataSet();
+
+    // Mapeia nome da rua → lista de IDs de cruzamentos que a contêm
+    const ruasMap = {};
+    let contadorNos = 0;
+
+    // 1. Cria os nós (Cruzamentos)
+    data.cruzamentos.forEach((cruz) => {
+      contadorNos++;
+      const cruzId = 'C' + contadorNos;
+
+      let label = cruzId;
+      if (cruz.sinal_padrao) {
+        label += '\n' + formatarSinal(cruz.sinal_padrao, sinaisGlobais).trim();
       }
-      return ` [🚦 ${cfg.verde_s}v/${cfg.vermelho_s}r]`;
-    }
 
-    function gerarGrafo() {
-      const textoJson = document.getElementById('json-input').value.trim();
-      if (!textoJson) return alert("Cole o JSON primeiro!");
+      nodes.add({ id: cruzId, label: label, shape: 'circle', color: '#a5d6a7' });
 
-      const data = JSON.parse(textoJson);
-      const sinaisGlobais = data.sinais_globais || {};
-      
-      const nodes = new vis.DataSet();
-      const edges = new vis.DataSet();
-      const ruasMap = {}; 
-      let contadorNos = 0;
+      cruz.entradas.forEach(e => {
+        // CORREÇÃO: era "if (ruasMap[e.rua])" — lógica invertida, nunca acumulava
+        if (!ruasMap[e.rua]) ruasMap[e.rua] = [];
+        ruasMap[e.rua].push(cruzId);
+      });
+    });
 
-      // 1. Cria os nós (Cruzamentos oficiais)
-      data.cruzamentos.forEach((cruz) => {
+    // 2. Cria as arestas (Ruas)
+    data.ruas.forEach(rua => {
+      const conexoes = ruasMap[rua.id] || [];
+
+      // Monta label da rua com sinais internos
+      let labelRua = rua.id;
+      rua.sinais_internos.forEach(sinal => {
+        labelRua += '\n' + formatarSinal(sinal.configuracao, sinaisGlobais).trim();
+      });
+
+      // CORREÇÃO: era "rua.mao == 'unica'" (invertido) — mão única tem seta só em um sentido
+      const ehUnica = rua.mao === 'unica';
+      const setas   = ehUnica ? 'to' : 'to, from';
+
+      if (conexoes.length === 2) {
+        edges.add({ from: conexoes[0], to: conexoes[1], label: labelRua, arrows: setas });
+      } else if (conexoes.length === 1) {
         contadorNos++;
-        const cruzId = 'C' + contadorNos;
-        let label = cruzId;
-        
-        // Adiciona o tempo do sinal padrão do cruzamento
-        if (cruz.sinal_padrao) {
-          label += '\n' + formatarSinal(cruz.sinal_padrao, sinaisGlobais).trim();
-        }
-        
-        nodes.add({ id: cruzId, label: label, shape: 'circle', color: '#a5d6a7' });
+        const stubId = 'S' + contadorNos;
+        nodes.add({ id: stubId, label: stubId, shape: 'circle', color: '#a5d6a7' });
+        edges.add({ from: conexoes[0], to: stubId, label: labelRua, arrows: setas });
+      }
+    });
 
-        cruz.entradas.forEach(e => {
-          if (!ruasMap[e.rua]) ruasMap[e.rua] = [];
-          ruasMap[e.rua].push(cruzId);
-        });
-      });
+    // 3. Renderiza
+    const container = document.getElementById('grafo-container');
+    const networkData = { nodes: nodes, edges: edges };
+    const options = {
+      edges: {
+        font: { align: 'horizontal', background: '#ffffff', strokeWidth: 0 },
+        smooth: { type: 'dynamic' }
+      },
+      physics: {
+        barnesHut: { gravitationalConstant: -8000, springLength: 250 }
+      }
+    };
 
-      // 2. Cria as Arestas (Ruas)
-      data.ruas.forEach(rua => {
-        const conexoes = ruasMap[rua.id] || [];
-        
-        // Monta o nome da rua + TODOS os sinais internos dela
-        let labelRua = rua.id;
-        rua.sinais_internos.forEach(sinal => {
-            labelRua += '\n' + formatarSinal(sinal.configuracao, sinaisGlobais).trim();
-        });
+    new vis.Network(container, networkData, options);
+  }
+</script>
 
-        const ehDupla = rua.mao !== 'unica';
-        const setas = ehDupla ? 'to, from' : 'to'; 
-
-        if (conexoes.length === 2) {
-          edges.add({ from: conexoes[0], to: conexoes[1], label: labelRua, arrows: setas });
-        } 
-        else if (conexoes.length === 1) {
-          contadorNos++;
-          const stubId = 'C' + contadorNos;
-          nodes.add({ id: stubId, label: stubId, shape: 'circle', color: '#a5d6a7' });
-          edges.add({ from: conexoes[0], to: stubId, label: labelRua, arrows: setas });
-        }
-      });
-
-      // 3. Renderiza na tela
-      const container = document.getElementById('grafo-container');
-      const networkData = { nodes: nodes, edges: edges };
-      const options = {
-        edges: {
-          font: { align: 'horizontal', background: '#ffffff', strokeWidth: 0 },
-          smooth: { type: 'dynamic' }
-        },
-        physics: {
-          barnesHut: { gravitationalConstant: -8000, springLength: 250 }
-        }
-      };
-      
-      new vis.Network(container, networkData, options);
-    }
-  </script>
 </body>
 </html>
