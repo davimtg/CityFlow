@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Visualizador Enxuto - Grafo de Tráfego</title>
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f4f4f9; }
+    textarea { width: 100%; height: 100px; margin-bottom: 10px; font-family: monospace; }
+    button { padding: 10px 20px; cursor: pointer; background: #28a745; color: white; border: none; border-radius: 5px; }
+    #grafo-container { width: 100%; height: 600px; border: 1px solid #ccc; background: white; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <h2>Grafo de Tráfego (Versão Enxuta)</h2>
+  <textarea id="json-input" placeholder="Cole aqui o conteúdo do seu arquivo .json..."></textarea>
+  <button onclick="gerarGrafo()">Gerar Grafo</button>
+
+  <div id="grafo-container"></div>
+
+  <script>
+    // Função para traduzir o objeto do sinal em texto (ex: [🚦 45v/30r])
+    function formatarSinal(cfg, globais) {
+      if (!cfg) return "";
+      if (cfg.referencia) {
+        const g = globais[cfg.referencia];
+        if (g) return ` [🚦 ${g.verde_s}v/${g.vermelho_s}r]`;
+        return ` [🚦 ${cfg.referencia}]`;
+      }
+      return ` [🚦 ${cfg.verde_s}v/${cfg.vermelho_s}r]`;
+    }
+
+    function gerarGrafo() {
+      const textoJson = document.getElementById('json-input').value.trim();
+      if (!textoJson) return alert("Cole o JSON primeiro!");
+
+      const data = JSON.parse(textoJson);
+      const sinaisGlobais = data.sinais_globais || {};
+      
+      const nodes = new vis.DataSet();
+      const edges = new vis.DataSet();
+      const ruasMap = {}; 
+      let contadorNos = 0;
+
+      // 1. Cria os nós (Cruzamentos oficiais)
+      data.cruzamentos.forEach((cruz) => {
+        contadorNos++;
+        const cruzId = 'C' + contadorNos;
+        let label = cruzId;
+        
+        // Adiciona o tempo do sinal padrão do cruzamento
+        if (cruz.sinal_padrao) {
+          label += '\n' + formatarSinal(cruz.sinal_padrao, sinaisGlobais).trim();
+        }
+        
+        nodes.add({ id: cruzId, label: label, shape: 'circle', color: '#a5d6a7' });
+
+        cruz.entradas.forEach(e => {
+          if (!ruasMap[e.rua]) ruasMap[e.rua] = [];
+          ruasMap[e.rua].push(cruzId);
+        });
+      });
+
+      // 2. Cria as Arestas (Ruas)
+      data.ruas.forEach(rua => {
+        const conexoes = ruasMap[rua.id] || [];
+        
+        // Monta o nome da rua + TODOS os sinais internos dela
+        let labelRua = rua.id;
+        rua.sinais_internos.forEach(sinal => {
+            labelRua += '\n' + formatarSinal(sinal.configuracao, sinaisGlobais).trim();
+        });
+
+        const ehDupla = rua.mao !== 'unica';
+        const setas = ehDupla ? 'to, from' : 'to'; 
+
+        if (conexoes.length === 2) {
+          edges.add({ from: conexoes[0], to: conexoes[1], label: labelRua, arrows: setas });
+        } 
+        else if (conexoes.length === 1) {
+          contadorNos++;
+          const stubId = 'C' + contadorNos;
+          nodes.add({ id: stubId, label: stubId, shape: 'circle', color: '#a5d6a7' });
+          edges.add({ from: conexoes[0], to: stubId, label: labelRua, arrows: setas });
+        }
+      });
+
+      // 3. Renderiza na tela
+      const container = document.getElementById('grafo-container');
+      const networkData = { nodes: nodes, edges: edges };
+      const options = {
+        edges: {
+          font: { align: 'horizontal', background: '#ffffff', strokeWidth: 0 },
+          smooth: { type: 'dynamic' }
+        },
+        physics: {
+          barnesHut: { gravitationalConstant: -8000, springLength: 250 }
+        }
+      };
+      
+      new vis.Network(container, networkData, options);
+    }
+  </script>
+</body>
+</html>

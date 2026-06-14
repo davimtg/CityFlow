@@ -1,0 +1,70 @@
+/* =========================================
+   Simulação: Região da Avenida Paulista
+   ========================================= */
+
+/* sinais reutilizáveis */
+sinal semaforo_padrao { verde: 45s; vermelho: 30s; }
+sinal semaforo_rapido { verde: 20s; vermelho: 15s; }
+
+/* ---- ruas ---- */
+
+rua "Avenida Paulista" {
+    tamanho: 3000m;
+    mao: dupla;
+
+    sinal em 500m semaforo_padrao;
+    sinal em 1500m { verde: 60s; vermelho: 40s; }
+    sinal em 2500m semaforo_padrao;
+}
+
+rua "Rua Augusta" {
+    tamanho: 800m;
+    mao: dupla;
+
+    sinal em 400m semaforo_rapido;
+}
+
+rua "Rua Consolação" {
+    tamanho: 600m;
+    mao: unica;
+}
+
+rua "Alameda Santos" {
+    tamanho: 1200m;
+    mao: dupla;
+}
+
+/* ---- cruzamentos ---- */
+
+/* cruzamento simples — fluxo livre entre as duas */
+cruzamento {
+    "Avenida Paulista" em 500m;
+    "Rua Augusta" em 0m;
+
+    sinal semaforo_padrao;
+}
+
+/* cruzamento com 3 ruas e fluxo restrito */
+cruzamento {
+    "Avenida Paulista" em 1500m;
+    "Rua Consolação" em 0m;
+    "Alameda Santos" em 300m;
+
+    /* só esses pares são permitidos */
+    de "Avenida Paulista" para "Rua Consolação";
+    de "Avenida Paulista" para "Alameda Santos" {
+        sinal { verde: 25s; vermelho: 35s; }
+    }
+    de "Alameda Santos" para "Avenida Paulista" {
+        sinal semaforo_rapido;
+    }
+
+    /* default para pares sem sinal próprio */
+    sinal semaforo_padrao;
+}
+
+/* cruzamento livre sem sinal */
+cruzamento {
+    "Rua Augusta" em 800m;
+    "Alameda Santos" em 0m;
+}
