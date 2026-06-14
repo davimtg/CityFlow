@@ -1,5 +1,5 @@
 import ply.yacc as yacc
-from lexer import tokens, lexer
+from analisador_lexico import tokens, lexer
 
 # ─────────────────────────────────────────
 #  PROGRAMA
@@ -174,7 +174,7 @@ parser = yacc.yacc()
 if __name__ == '__main__':
     import sys
     import os
-    from ast_to_json import exportar
+    from analisador_semantico import exportar
 
     # 1. Verifica se o usuário passou um arquivo de entrada no terminal
     if len(sys.argv) < 2:

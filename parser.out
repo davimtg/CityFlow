@@ -1,0 +1,884 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    string_mf
+    variavel_mf
+
+Grammar
+
+Rule 0     S' -> programa
+Rule 1     programa -> declaracao_lista
+Rule 2     declaracao_lista -> declaracao_lista declaracao
+Rule 3     declaracao_lista -> declaracao
+Rule 4     declaracao -> decl_sinal_global
+Rule 5     declaracao -> decl_rua
+Rule 6     declaracao -> decl_cruzamento
+Rule 7     corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR
+Rule 8     decl_sinal_global -> KW_SINAL ID corpo_sinal
+Rule 9     decl_rua -> KW_RUA STRING CHAVE_ESQ rua_item_lista CHAVE_DIR
+Rule 10    rua_item_lista -> rua_item_lista rua_item
+Rule 11    rua_item_lista -> rua_item
+Rule 12    rua_item -> rua_tamanho
+Rule 13    rua_item -> rua_mao
+Rule 14    rua_item -> rua_sinal_ref
+Rule 15    rua_item -> rua_sinal_inline
+Rule 16    rua_tamanho -> KW_TAMANHO DOIS_PONTOS MEDIDA_M PONTO_VIRGULA
+Rule 17    rua_mao -> KW_MAO DOIS_PONTOS mao_valor PONTO_VIRGULA
+Rule 18    mao_valor -> KW_DUPLA
+Rule 19    mao_valor -> KW_UNICA
+Rule 20    rua_sinal_ref -> KW_SINAL KW_EM MEDIDA_M ID PONTO_VIRGULA
+Rule 21    rua_sinal_inline -> KW_SINAL KW_EM MEDIDA_M corpo_sinal
+Rule 22    decl_cruzamento -> KW_CRUZAMENTO CHAVE_ESQ cruzamento_item_lista CHAVE_DIR
+Rule 23    cruzamento_item_lista -> cruzamento_item_lista cruzamento_item
+Rule 24    cruzamento_item_lista -> cruzamento_item
+Rule 25    cruzamento_item -> cruzamento_entrada
+Rule 26    cruzamento_item -> cruzamento_par_simples
+Rule 27    cruzamento_item -> cruzamento_par_com_corpo
+Rule 28    cruzamento_item -> cruzamento_sinal_ref
+Rule 29    cruzamento_item -> cruzamento_sinal_inline
+Rule 30    cruzamento_entrada -> STRING KW_EM MEDIDA_M PONTO_VIRGULA
+Rule 31    cruzamento_sinal_ref -> KW_SINAL ID PONTO_VIRGULA
+Rule 32    cruzamento_sinal_inline -> KW_SINAL corpo_sinal
+Rule 33    cruzamento_par_simples -> KW_DE STRING KW_PARA STRING PONTO_VIRGULA
+Rule 34    cruzamento_par_com_corpo -> KW_DE STRING KW_PARA STRING CHAVE_ESQ par_sinal CHAVE_DIR
+Rule 35    par_sinal -> KW_SINAL ID PONTO_VIRGULA
+Rule 36    par_sinal -> KW_SINAL corpo_sinal
+
+Terminals, with rules where they appear
+
+CHAVE_DIR            : 7 9 22 34
+CHAVE_ESQ            : 7 9 22 34
+DOIS_PONTOS          : 7 7 16 17
+ID                   : 8 20 31 35
+KW_CRUZAMENTO        : 22
+KW_DE                : 33 34
+KW_DUPLA             : 18
+KW_EM                : 20 21 30
+KW_MAO               : 17
+KW_PARA              : 33 34
+KW_RUA               : 9
+KW_SINAL             : 8 20 21 31 32 35 36
+KW_TAMANHO           : 16
+KW_UNICA             : 19
+KW_VERDE             : 7
+KW_VERMELHO          : 7
+MEDIDA_M             : 16 20 21 30
+PONTO_VIRGULA        : 7 7 16 17 20 30 31 33 35
+STRING               : 9 30 33 33 34 34
+TEMPO_S              : 7 7
+error                : 
+string_mf            : 
+variavel_mf          : 
+
+Nonterminals, with rules where they appear
+
+corpo_sinal          : 8 21 32 36
+cruzamento_entrada   : 25
+cruzamento_item      : 23 24
+cruzamento_item_lista : 22 23
+cruzamento_par_com_corpo : 27
+cruzamento_par_simples : 26
+cruzamento_sinal_inline : 29
+cruzamento_sinal_ref : 28
+decl_cruzamento      : 6
+decl_rua             : 5
+decl_sinal_global    : 4
+declaracao           : 2 3
+declaracao_lista     : 1 2
+mao_valor            : 17
+par_sinal            : 34
+programa             : 0
+rua_item             : 10 11
+rua_item_lista       : 9 10
+rua_mao              : 13
+rua_sinal_inline     : 15
+rua_sinal_ref        : 14
+rua_tamanho          : 12
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . programa
+    (1) programa -> . declaracao_lista
+    (2) declaracao_lista -> . declaracao_lista declaracao
+    (3) declaracao_lista -> . declaracao
+    (4) declaracao -> . decl_sinal_global
+    (5) declaracao -> . decl_rua
+    (6) declaracao -> . decl_cruzamento
+    (8) decl_sinal_global -> . KW_SINAL ID corpo_sinal
+    (9) decl_rua -> . KW_RUA STRING CHAVE_ESQ rua_item_lista CHAVE_DIR
+    (22) decl_cruzamento -> . KW_CRUZAMENTO CHAVE_ESQ cruzamento_item_lista CHAVE_DIR
+
+    KW_SINAL        shift and go to state 7
+    KW_RUA          shift and go to state 8
+    KW_CRUZAMENTO   shift and go to state 9
+
+    programa                       shift and go to state 1
+    declaracao_lista               shift and go to state 2
+    declaracao                     shift and go to state 3
+    decl_sinal_global              shift and go to state 4
+    decl_rua                       shift and go to state 5
+    decl_cruzamento                shift and go to state 6
+
+state 1
+
+    (0) S' -> programa .
+
+
+
+state 2
+
+    (1) programa -> declaracao_lista .
+    (2) declaracao_lista -> declaracao_lista . declaracao
+    (4) declaracao -> . decl_sinal_global
+    (5) declaracao -> . decl_rua
+    (6) declaracao -> . decl_cruzamento
+    (8) decl_sinal_global -> . KW_SINAL ID corpo_sinal
+    (9) decl_rua -> . KW_RUA STRING CHAVE_ESQ rua_item_lista CHAVE_DIR
+    (22) decl_cruzamento -> . KW_CRUZAMENTO CHAVE_ESQ cruzamento_item_lista CHAVE_DIR
+
+    $end            reduce using rule 1 (programa -> declaracao_lista .)
+    KW_SINAL        shift and go to state 7
+    KW_RUA          shift and go to state 8
+    KW_CRUZAMENTO   shift and go to state 9
+
+    declaracao                     shift and go to state 10
+    decl_sinal_global              shift and go to state 4
+    decl_rua                       shift and go to state 5
+    decl_cruzamento                shift and go to state 6
+
+state 3
+
+    (3) declaracao_lista -> declaracao .
+
+    KW_SINAL        reduce using rule 3 (declaracao_lista -> declaracao .)
+    KW_RUA          reduce using rule 3 (declaracao_lista -> declaracao .)
+    KW_CRUZAMENTO   reduce using rule 3 (declaracao_lista -> declaracao .)
+    $end            reduce using rule 3 (declaracao_lista -> declaracao .)
+
+
+state 4
+
+    (4) declaracao -> decl_sinal_global .
+
+    KW_SINAL        reduce using rule 4 (declaracao -> decl_sinal_global .)
+    KW_RUA          reduce using rule 4 (declaracao -> decl_sinal_global .)
+    KW_CRUZAMENTO   reduce using rule 4 (declaracao -> decl_sinal_global .)
+    $end            reduce using rule 4 (declaracao -> decl_sinal_global .)
+
+
+state 5
+
+    (5) declaracao -> decl_rua .
+
+    KW_SINAL        reduce using rule 5 (declaracao -> decl_rua .)
+    KW_RUA          reduce using rule 5 (declaracao -> decl_rua .)
+    KW_CRUZAMENTO   reduce using rule 5 (declaracao -> decl_rua .)
+    $end            reduce using rule 5 (declaracao -> decl_rua .)
+
+
+state 6
+
+    (6) declaracao -> decl_cruzamento .
+
+    KW_SINAL        reduce using rule 6 (declaracao -> decl_cruzamento .)
+    KW_RUA          reduce using rule 6 (declaracao -> decl_cruzamento .)
+    KW_CRUZAMENTO   reduce using rule 6 (declaracao -> decl_cruzamento .)
+    $end            reduce using rule 6 (declaracao -> decl_cruzamento .)
+
+
+state 7
+
+    (8) decl_sinal_global -> KW_SINAL . ID corpo_sinal
+
+    ID              shift and go to state 11
+
+
+state 8
+
+    (9) decl_rua -> KW_RUA . STRING CHAVE_ESQ rua_item_lista CHAVE_DIR
+
+    STRING          shift and go to state 12
+
+
+state 9
+
+    (22) decl_cruzamento -> KW_CRUZAMENTO . CHAVE_ESQ cruzamento_item_lista CHAVE_DIR
+
+    CHAVE_ESQ       shift and go to state 13
+
+
+state 10
+
+    (2) declaracao_lista -> declaracao_lista declaracao .
+
+    KW_SINAL        reduce using rule 2 (declaracao_lista -> declaracao_lista declaracao .)
+    KW_RUA          reduce using rule 2 (declaracao_lista -> declaracao_lista declaracao .)
+    KW_CRUZAMENTO   reduce using rule 2 (declaracao_lista -> declaracao_lista declaracao .)
+    $end            reduce using rule 2 (declaracao_lista -> declaracao_lista declaracao .)
+
+
+state 11
+
+    (8) decl_sinal_global -> KW_SINAL ID . corpo_sinal
+    (7) corpo_sinal -> . CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR
+
+    CHAVE_ESQ       shift and go to state 15
+
+    corpo_sinal                    shift and go to state 14
+
+state 12
+
+    (9) decl_rua -> KW_RUA STRING . CHAVE_ESQ rua_item_lista CHAVE_DIR
+
+    CHAVE_ESQ       shift and go to state 16
+
+
+state 13
+
+    (22) decl_cruzamento -> KW_CRUZAMENTO CHAVE_ESQ . cruzamento_item_lista CHAVE_DIR
+    (23) cruzamento_item_lista -> . cruzamento_item_lista cruzamento_item
+    (24) cruzamento_item_lista -> . cruzamento_item
+    (25) cruzamento_item -> . cruzamento_entrada
+    (26) cruzamento_item -> . cruzamento_par_simples
+    (27) cruzamento_item -> . cruzamento_par_com_corpo
+    (28) cruzamento_item -> . cruzamento_sinal_ref
+    (29) cruzamento_item -> . cruzamento_sinal_inline
+    (30) cruzamento_entrada -> . STRING KW_EM MEDIDA_M PONTO_VIRGULA
+    (33) cruzamento_par_simples -> . KW_DE STRING KW_PARA STRING PONTO_VIRGULA
+    (34) cruzamento_par_com_corpo -> . KW_DE STRING KW_PARA STRING CHAVE_ESQ par_sinal CHAVE_DIR
+    (31) cruzamento_sinal_ref -> . KW_SINAL ID PONTO_VIRGULA
+    (32) cruzamento_sinal_inline -> . KW_SINAL corpo_sinal
+
+    STRING          shift and go to state 24
+    KW_DE           shift and go to state 25
+    KW_SINAL        shift and go to state 26
+
+    cruzamento_item_lista          shift and go to state 17
+    cruzamento_item                shift and go to state 18
+    cruzamento_entrada             shift and go to state 19
+    cruzamento_par_simples         shift and go to state 20
+    cruzamento_par_com_corpo       shift and go to state 21
+    cruzamento_sinal_ref           shift and go to state 22
+    cruzamento_sinal_inline        shift and go to state 23
+
+state 14
+
+    (8) decl_sinal_global -> KW_SINAL ID corpo_sinal .
+
+    KW_SINAL        reduce using rule 8 (decl_sinal_global -> KW_SINAL ID corpo_sinal .)
+    KW_RUA          reduce using rule 8 (decl_sinal_global -> KW_SINAL ID corpo_sinal .)
+    KW_CRUZAMENTO   reduce using rule 8 (decl_sinal_global -> KW_SINAL ID corpo_sinal .)
+    $end            reduce using rule 8 (decl_sinal_global -> KW_SINAL ID corpo_sinal .)
+
+
+state 15
+
+    (7) corpo_sinal -> CHAVE_ESQ . KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR
+
+    KW_VERDE        shift and go to state 27
+
+
+state 16
+
+    (9) decl_rua -> KW_RUA STRING CHAVE_ESQ . rua_item_lista CHAVE_DIR
+    (10) rua_item_lista -> . rua_item_lista rua_item
+    (11) rua_item_lista -> . rua_item
+    (12) rua_item -> . rua_tamanho
+    (13) rua_item -> . rua_mao
+    (14) rua_item -> . rua_sinal_ref
+    (15) rua_item -> . rua_sinal_inline
+    (16) rua_tamanho -> . KW_TAMANHO DOIS_PONTOS MEDIDA_M PONTO_VIRGULA
+    (17) rua_mao -> . KW_MAO DOIS_PONTOS mao_valor PONTO_VIRGULA
+    (20) rua_sinal_ref -> . KW_SINAL KW_EM MEDIDA_M ID PONTO_VIRGULA
+    (21) rua_sinal_inline -> . KW_SINAL KW_EM MEDIDA_M corpo_sinal
+
+    KW_TAMANHO      shift and go to state 34
+    KW_MAO          shift and go to state 35
+    KW_SINAL        shift and go to state 36
+
+    rua_item_lista                 shift and go to state 28
+    rua_item                       shift and go to state 29
+    rua_tamanho                    shift and go to state 30
+    rua_mao                        shift and go to state 31
+    rua_sinal_ref                  shift and go to state 32
+    rua_sinal_inline               shift and go to state 33
+
+state 17
+
+    (22) decl_cruzamento -> KW_CRUZAMENTO CHAVE_ESQ cruzamento_item_lista . CHAVE_DIR
+    (23) cruzamento_item_lista -> cruzamento_item_lista . cruzamento_item
+    (25) cruzamento_item -> . cruzamento_entrada
+    (26) cruzamento_item -> . cruzamento_par_simples
+    (27) cruzamento_item -> . cruzamento_par_com_corpo
+    (28) cruzamento_item -> . cruzamento_sinal_ref
+    (29) cruzamento_item -> . cruzamento_sinal_inline
+    (30) cruzamento_entrada -> . STRING KW_EM MEDIDA_M PONTO_VIRGULA
+    (33) cruzamento_par_simples -> . KW_DE STRING KW_PARA STRING PONTO_VIRGULA
+    (34) cruzamento_par_com_corpo -> . KW_DE STRING KW_PARA STRING CHAVE_ESQ par_sinal CHAVE_DIR
+    (31) cruzamento_sinal_ref -> . KW_SINAL ID PONTO_VIRGULA
+    (32) cruzamento_sinal_inline -> . KW_SINAL corpo_sinal
+
+    CHAVE_DIR       shift and go to state 37
+    STRING          shift and go to state 24
+    KW_DE           shift and go to state 25
+    KW_SINAL        shift and go to state 26
+
+    cruzamento_item                shift and go to state 38
+    cruzamento_entrada             shift and go to state 19
+    cruzamento_par_simples         shift and go to state 20
+    cruzamento_par_com_corpo       shift and go to state 21
+    cruzamento_sinal_ref           shift and go to state 22
+    cruzamento_sinal_inline        shift and go to state 23
+
+state 18
+
+    (24) cruzamento_item_lista -> cruzamento_item .
+
+    CHAVE_DIR       reduce using rule 24 (cruzamento_item_lista -> cruzamento_item .)
+    STRING          reduce using rule 24 (cruzamento_item_lista -> cruzamento_item .)
+    KW_DE           reduce using rule 24 (cruzamento_item_lista -> cruzamento_item .)
+    KW_SINAL        reduce using rule 24 (cruzamento_item_lista -> cruzamento_item .)
+
+
+state 19
+
+    (25) cruzamento_item -> cruzamento_entrada .
+
+    CHAVE_DIR       reduce using rule 25 (cruzamento_item -> cruzamento_entrada .)
+    STRING          reduce using rule 25 (cruzamento_item -> cruzamento_entrada .)
+    KW_DE           reduce using rule 25 (cruzamento_item -> cruzamento_entrada .)
+    KW_SINAL        reduce using rule 25 (cruzamento_item -> cruzamento_entrada .)
+
+
+state 20
+
+    (26) cruzamento_item -> cruzamento_par_simples .
+
+    CHAVE_DIR       reduce using rule 26 (cruzamento_item -> cruzamento_par_simples .)
+    STRING          reduce using rule 26 (cruzamento_item -> cruzamento_par_simples .)
+    KW_DE           reduce using rule 26 (cruzamento_item -> cruzamento_par_simples .)
+    KW_SINAL        reduce using rule 26 (cruzamento_item -> cruzamento_par_simples .)
+
+
+state 21
+
+    (27) cruzamento_item -> cruzamento_par_com_corpo .
+
+    CHAVE_DIR       reduce using rule 27 (cruzamento_item -> cruzamento_par_com_corpo .)
+    STRING          reduce using rule 27 (cruzamento_item -> cruzamento_par_com_corpo .)
+    KW_DE           reduce using rule 27 (cruzamento_item -> cruzamento_par_com_corpo .)
+    KW_SINAL        reduce using rule 27 (cruzamento_item -> cruzamento_par_com_corpo .)
+
+
+state 22
+
+    (28) cruzamento_item -> cruzamento_sinal_ref .
+
+    CHAVE_DIR       reduce using rule 28 (cruzamento_item -> cruzamento_sinal_ref .)
+    STRING          reduce using rule 28 (cruzamento_item -> cruzamento_sinal_ref .)
+    KW_DE           reduce using rule 28 (cruzamento_item -> cruzamento_sinal_ref .)
+    KW_SINAL        reduce using rule 28 (cruzamento_item -> cruzamento_sinal_ref .)
+
+
+state 23
+
+    (29) cruzamento_item -> cruzamento_sinal_inline .
+
+    CHAVE_DIR       reduce using rule 29 (cruzamento_item -> cruzamento_sinal_inline .)
+    STRING          reduce using rule 29 (cruzamento_item -> cruzamento_sinal_inline .)
+    KW_DE           reduce using rule 29 (cruzamento_item -> cruzamento_sinal_inline .)
+    KW_SINAL        reduce using rule 29 (cruzamento_item -> cruzamento_sinal_inline .)
+
+
+state 24
+
+    (30) cruzamento_entrada -> STRING . KW_EM MEDIDA_M PONTO_VIRGULA
+
+    KW_EM           shift and go to state 39
+
+
+state 25
+
+    (33) cruzamento_par_simples -> KW_DE . STRING KW_PARA STRING PONTO_VIRGULA
+    (34) cruzamento_par_com_corpo -> KW_DE . STRING KW_PARA STRING CHAVE_ESQ par_sinal CHAVE_DIR
+
+    STRING          shift and go to state 40
+
+
+state 26
+
+    (31) cruzamento_sinal_ref -> KW_SINAL . ID PONTO_VIRGULA
+    (32) cruzamento_sinal_inline -> KW_SINAL . corpo_sinal
+    (7) corpo_sinal -> . CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR
+
+    ID              shift and go to state 41
+    CHAVE_ESQ       shift and go to state 15
+
+    corpo_sinal                    shift and go to state 42
+
+state 27
+
+    (7) corpo_sinal -> CHAVE_ESQ KW_VERDE . DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR
+
+    DOIS_PONTOS     shift and go to state 43
+
+
+state 28
+
+    (9) decl_rua -> KW_RUA STRING CHAVE_ESQ rua_item_lista . CHAVE_DIR
+    (10) rua_item_lista -> rua_item_lista . rua_item
+    (12) rua_item -> . rua_tamanho
+    (13) rua_item -> . rua_mao
+    (14) rua_item -> . rua_sinal_ref
+    (15) rua_item -> . rua_sinal_inline
+    (16) rua_tamanho -> . KW_TAMANHO DOIS_PONTOS MEDIDA_M PONTO_VIRGULA
+    (17) rua_mao -> . KW_MAO DOIS_PONTOS mao_valor PONTO_VIRGULA
+    (20) rua_sinal_ref -> . KW_SINAL KW_EM MEDIDA_M ID PONTO_VIRGULA
+    (21) rua_sinal_inline -> . KW_SINAL KW_EM MEDIDA_M corpo_sinal
+
+    CHAVE_DIR       shift and go to state 44
+    KW_TAMANHO      shift and go to state 34
+    KW_MAO          shift and go to state 35
+    KW_SINAL        shift and go to state 36
+
+    rua_item                       shift and go to state 45
+    rua_tamanho                    shift and go to state 30
+    rua_mao                        shift and go to state 31
+    rua_sinal_ref                  shift and go to state 32
+    rua_sinal_inline               shift and go to state 33
+
+state 29
+
+    (11) rua_item_lista -> rua_item .
+
+    CHAVE_DIR       reduce using rule 11 (rua_item_lista -> rua_item .)
+    KW_TAMANHO      reduce using rule 11 (rua_item_lista -> rua_item .)
+    KW_MAO          reduce using rule 11 (rua_item_lista -> rua_item .)
+    KW_SINAL        reduce using rule 11 (rua_item_lista -> rua_item .)
+
+
+state 30
+
+    (12) rua_item -> rua_tamanho .
+
+    CHAVE_DIR       reduce using rule 12 (rua_item -> rua_tamanho .)
+    KW_TAMANHO      reduce using rule 12 (rua_item -> rua_tamanho .)
+    KW_MAO          reduce using rule 12 (rua_item -> rua_tamanho .)
+    KW_SINAL        reduce using rule 12 (rua_item -> rua_tamanho .)
+
+
+state 31
+
+    (13) rua_item -> rua_mao .
+
+    CHAVE_DIR       reduce using rule 13 (rua_item -> rua_mao .)
+    KW_TAMANHO      reduce using rule 13 (rua_item -> rua_mao .)
+    KW_MAO          reduce using rule 13 (rua_item -> rua_mao .)
+    KW_SINAL        reduce using rule 13 (rua_item -> rua_mao .)
+
+
+state 32
+
+    (14) rua_item -> rua_sinal_ref .
+
+    CHAVE_DIR       reduce using rule 14 (rua_item -> rua_sinal_ref .)
+    KW_TAMANHO      reduce using rule 14 (rua_item -> rua_sinal_ref .)
+    KW_MAO          reduce using rule 14 (rua_item -> rua_sinal_ref .)
+    KW_SINAL        reduce using rule 14 (rua_item -> rua_sinal_ref .)
+
+
+state 33
+
+    (15) rua_item -> rua_sinal_inline .
+
+    CHAVE_DIR       reduce using rule 15 (rua_item -> rua_sinal_inline .)
+    KW_TAMANHO      reduce using rule 15 (rua_item -> rua_sinal_inline .)
+    KW_MAO          reduce using rule 15 (rua_item -> rua_sinal_inline .)
+    KW_SINAL        reduce using rule 15 (rua_item -> rua_sinal_inline .)
+
+
+state 34
+
+    (16) rua_tamanho -> KW_TAMANHO . DOIS_PONTOS MEDIDA_M PONTO_VIRGULA
+
+    DOIS_PONTOS     shift and go to state 46
+
+
+state 35
+
+    (17) rua_mao -> KW_MAO . DOIS_PONTOS mao_valor PONTO_VIRGULA
+
+    DOIS_PONTOS     shift and go to state 47
+
+
+state 36
+
+    (20) rua_sinal_ref -> KW_SINAL . KW_EM MEDIDA_M ID PONTO_VIRGULA
+    (21) rua_sinal_inline -> KW_SINAL . KW_EM MEDIDA_M corpo_sinal
+
+    KW_EM           shift and go to state 48
+
+
+state 37
+
+    (22) decl_cruzamento -> KW_CRUZAMENTO CHAVE_ESQ cruzamento_item_lista CHAVE_DIR .
+
+    KW_SINAL        reduce using rule 22 (decl_cruzamento -> KW_CRUZAMENTO CHAVE_ESQ cruzamento_item_lista CHAVE_DIR .)
+    KW_RUA          reduce using rule 22 (decl_cruzamento -> KW_CRUZAMENTO CHAVE_ESQ cruzamento_item_lista CHAVE_DIR .)
+    KW_CRUZAMENTO   reduce using rule 22 (decl_cruzamento -> KW_CRUZAMENTO CHAVE_ESQ cruzamento_item_lista CHAVE_DIR .)
+    $end            reduce using rule 22 (decl_cruzamento -> KW_CRUZAMENTO CHAVE_ESQ cruzamento_item_lista CHAVE_DIR .)
+
+
+state 38
+
+    (23) cruzamento_item_lista -> cruzamento_item_lista cruzamento_item .
+
+    CHAVE_DIR       reduce using rule 23 (cruzamento_item_lista -> cruzamento_item_lista cruzamento_item .)
+    STRING          reduce using rule 23 (cruzamento_item_lista -> cruzamento_item_lista cruzamento_item .)
+    KW_DE           reduce using rule 23 (cruzamento_item_lista -> cruzamento_item_lista cruzamento_item .)
+    KW_SINAL        reduce using rule 23 (cruzamento_item_lista -> cruzamento_item_lista cruzamento_item .)
+
+
+state 39
+
+    (30) cruzamento_entrada -> STRING KW_EM . MEDIDA_M PONTO_VIRGULA
+
+    MEDIDA_M        shift and go to state 49
+
+
+state 40
+
+    (33) cruzamento_par_simples -> KW_DE STRING . KW_PARA STRING PONTO_VIRGULA
+    (34) cruzamento_par_com_corpo -> KW_DE STRING . KW_PARA STRING CHAVE_ESQ par_sinal CHAVE_DIR
+
+    KW_PARA         shift and go to state 50
+
+
+state 41
+
+    (31) cruzamento_sinal_ref -> KW_SINAL ID . PONTO_VIRGULA
+
+    PONTO_VIRGULA   shift and go to state 51
+
+
+state 42
+
+    (32) cruzamento_sinal_inline -> KW_SINAL corpo_sinal .
+
+    CHAVE_DIR       reduce using rule 32 (cruzamento_sinal_inline -> KW_SINAL corpo_sinal .)
+    STRING          reduce using rule 32 (cruzamento_sinal_inline -> KW_SINAL corpo_sinal .)
+    KW_DE           reduce using rule 32 (cruzamento_sinal_inline -> KW_SINAL corpo_sinal .)
+    KW_SINAL        reduce using rule 32 (cruzamento_sinal_inline -> KW_SINAL corpo_sinal .)
+
+
+state 43
+
+    (7) corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS . TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR
+
+    TEMPO_S         shift and go to state 52
+
+
+state 44
+
+    (9) decl_rua -> KW_RUA STRING CHAVE_ESQ rua_item_lista CHAVE_DIR .
+
+    KW_SINAL        reduce using rule 9 (decl_rua -> KW_RUA STRING CHAVE_ESQ rua_item_lista CHAVE_DIR .)
+    KW_RUA          reduce using rule 9 (decl_rua -> KW_RUA STRING CHAVE_ESQ rua_item_lista CHAVE_DIR .)
+    KW_CRUZAMENTO   reduce using rule 9 (decl_rua -> KW_RUA STRING CHAVE_ESQ rua_item_lista CHAVE_DIR .)
+    $end            reduce using rule 9 (decl_rua -> KW_RUA STRING CHAVE_ESQ rua_item_lista CHAVE_DIR .)
+
+
+state 45
+
+    (10) rua_item_lista -> rua_item_lista rua_item .
+
+    CHAVE_DIR       reduce using rule 10 (rua_item_lista -> rua_item_lista rua_item .)
+    KW_TAMANHO      reduce using rule 10 (rua_item_lista -> rua_item_lista rua_item .)
+    KW_MAO          reduce using rule 10 (rua_item_lista -> rua_item_lista rua_item .)
+    KW_SINAL        reduce using rule 10 (rua_item_lista -> rua_item_lista rua_item .)
+
+
+state 46
+
+    (16) rua_tamanho -> KW_TAMANHO DOIS_PONTOS . MEDIDA_M PONTO_VIRGULA
+
+    MEDIDA_M        shift and go to state 53
+
+
+state 47
+
+    (17) rua_mao -> KW_MAO DOIS_PONTOS . mao_valor PONTO_VIRGULA
+    (18) mao_valor -> . KW_DUPLA
+    (19) mao_valor -> . KW_UNICA
+
+    KW_DUPLA        shift and go to state 55
+    KW_UNICA        shift and go to state 56
+
+    mao_valor                      shift and go to state 54
+
+state 48
+
+    (20) rua_sinal_ref -> KW_SINAL KW_EM . MEDIDA_M ID PONTO_VIRGULA
+    (21) rua_sinal_inline -> KW_SINAL KW_EM . MEDIDA_M corpo_sinal
+
+    MEDIDA_M        shift and go to state 57
+
+
+state 49
+
+    (30) cruzamento_entrada -> STRING KW_EM MEDIDA_M . PONTO_VIRGULA
+
+    PONTO_VIRGULA   shift and go to state 58
+
+
+state 50
+
+    (33) cruzamento_par_simples -> KW_DE STRING KW_PARA . STRING PONTO_VIRGULA
+    (34) cruzamento_par_com_corpo -> KW_DE STRING KW_PARA . STRING CHAVE_ESQ par_sinal CHAVE_DIR
+
+    STRING          shift and go to state 59
+
+
+state 51
+
+    (31) cruzamento_sinal_ref -> KW_SINAL ID PONTO_VIRGULA .
+
+    CHAVE_DIR       reduce using rule 31 (cruzamento_sinal_ref -> KW_SINAL ID PONTO_VIRGULA .)
+    STRING          reduce using rule 31 (cruzamento_sinal_ref -> KW_SINAL ID PONTO_VIRGULA .)
+    KW_DE           reduce using rule 31 (cruzamento_sinal_ref -> KW_SINAL ID PONTO_VIRGULA .)
+    KW_SINAL        reduce using rule 31 (cruzamento_sinal_ref -> KW_SINAL ID PONTO_VIRGULA .)
+
+
+state 52
+
+    (7) corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S . PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR
+
+    PONTO_VIRGULA   shift and go to state 60
+
+
+state 53
+
+    (16) rua_tamanho -> KW_TAMANHO DOIS_PONTOS MEDIDA_M . PONTO_VIRGULA
+
+    PONTO_VIRGULA   shift and go to state 61
+
+
+state 54
+
+    (17) rua_mao -> KW_MAO DOIS_PONTOS mao_valor . PONTO_VIRGULA
+
+    PONTO_VIRGULA   shift and go to state 62
+
+
+state 55
+
+    (18) mao_valor -> KW_DUPLA .
+
+    PONTO_VIRGULA   reduce using rule 18 (mao_valor -> KW_DUPLA .)
+
+
+state 56
+
+    (19) mao_valor -> KW_UNICA .
+
+    PONTO_VIRGULA   reduce using rule 19 (mao_valor -> KW_UNICA .)
+
+
+state 57
+
+    (20) rua_sinal_ref -> KW_SINAL KW_EM MEDIDA_M . ID PONTO_VIRGULA
+    (21) rua_sinal_inline -> KW_SINAL KW_EM MEDIDA_M . corpo_sinal
+    (7) corpo_sinal -> . CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR
+
+    ID              shift and go to state 63
+    CHAVE_ESQ       shift and go to state 15
+
+    corpo_sinal                    shift and go to state 64
+
+state 58
+
+    (30) cruzamento_entrada -> STRING KW_EM MEDIDA_M PONTO_VIRGULA .
+
+    CHAVE_DIR       reduce using rule 30 (cruzamento_entrada -> STRING KW_EM MEDIDA_M PONTO_VIRGULA .)
+    STRING          reduce using rule 30 (cruzamento_entrada -> STRING KW_EM MEDIDA_M PONTO_VIRGULA .)
+    KW_DE           reduce using rule 30 (cruzamento_entrada -> STRING KW_EM MEDIDA_M PONTO_VIRGULA .)
+    KW_SINAL        reduce using rule 30 (cruzamento_entrada -> STRING KW_EM MEDIDA_M PONTO_VIRGULA .)
+
+
+state 59
+
+    (33) cruzamento_par_simples -> KW_DE STRING KW_PARA STRING . PONTO_VIRGULA
+    (34) cruzamento_par_com_corpo -> KW_DE STRING KW_PARA STRING . CHAVE_ESQ par_sinal CHAVE_DIR
+
+    PONTO_VIRGULA   shift and go to state 65
+    CHAVE_ESQ       shift and go to state 66
+
+
+state 60
+
+    (7) corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA . KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR
+
+    KW_VERMELHO     shift and go to state 67
+
+
+state 61
+
+    (16) rua_tamanho -> KW_TAMANHO DOIS_PONTOS MEDIDA_M PONTO_VIRGULA .
+
+    CHAVE_DIR       reduce using rule 16 (rua_tamanho -> KW_TAMANHO DOIS_PONTOS MEDIDA_M PONTO_VIRGULA .)
+    KW_TAMANHO      reduce using rule 16 (rua_tamanho -> KW_TAMANHO DOIS_PONTOS MEDIDA_M PONTO_VIRGULA .)
+    KW_MAO          reduce using rule 16 (rua_tamanho -> KW_TAMANHO DOIS_PONTOS MEDIDA_M PONTO_VIRGULA .)
+    KW_SINAL        reduce using rule 16 (rua_tamanho -> KW_TAMANHO DOIS_PONTOS MEDIDA_M PONTO_VIRGULA .)
+
+
+state 62
+
+    (17) rua_mao -> KW_MAO DOIS_PONTOS mao_valor PONTO_VIRGULA .
+
+    CHAVE_DIR       reduce using rule 17 (rua_mao -> KW_MAO DOIS_PONTOS mao_valor PONTO_VIRGULA .)
+    KW_TAMANHO      reduce using rule 17 (rua_mao -> KW_MAO DOIS_PONTOS mao_valor PONTO_VIRGULA .)
+    KW_MAO          reduce using rule 17 (rua_mao -> KW_MAO DOIS_PONTOS mao_valor PONTO_VIRGULA .)
+    KW_SINAL        reduce using rule 17 (rua_mao -> KW_MAO DOIS_PONTOS mao_valor PONTO_VIRGULA .)
+
+
+state 63
+
+    (20) rua_sinal_ref -> KW_SINAL KW_EM MEDIDA_M ID . PONTO_VIRGULA
+
+    PONTO_VIRGULA   shift and go to state 68
+
+
+state 64
+
+    (21) rua_sinal_inline -> KW_SINAL KW_EM MEDIDA_M corpo_sinal .
+
+    CHAVE_DIR       reduce using rule 21 (rua_sinal_inline -> KW_SINAL KW_EM MEDIDA_M corpo_sinal .)
+    KW_TAMANHO      reduce using rule 21 (rua_sinal_inline -> KW_SINAL KW_EM MEDIDA_M corpo_sinal .)
+    KW_MAO          reduce using rule 21 (rua_sinal_inline -> KW_SINAL KW_EM MEDIDA_M corpo_sinal .)
+    KW_SINAL        reduce using rule 21 (rua_sinal_inline -> KW_SINAL KW_EM MEDIDA_M corpo_sinal .)
+
+
+state 65
+
+    (33) cruzamento_par_simples -> KW_DE STRING KW_PARA STRING PONTO_VIRGULA .
+
+    CHAVE_DIR       reduce using rule 33 (cruzamento_par_simples -> KW_DE STRING KW_PARA STRING PONTO_VIRGULA .)
+    STRING          reduce using rule 33 (cruzamento_par_simples -> KW_DE STRING KW_PARA STRING PONTO_VIRGULA .)
+    KW_DE           reduce using rule 33 (cruzamento_par_simples -> KW_DE STRING KW_PARA STRING PONTO_VIRGULA .)
+    KW_SINAL        reduce using rule 33 (cruzamento_par_simples -> KW_DE STRING KW_PARA STRING PONTO_VIRGULA .)
+
+
+state 66
+
+    (34) cruzamento_par_com_corpo -> KW_DE STRING KW_PARA STRING CHAVE_ESQ . par_sinal CHAVE_DIR
+    (35) par_sinal -> . KW_SINAL ID PONTO_VIRGULA
+    (36) par_sinal -> . KW_SINAL corpo_sinal
+
+    KW_SINAL        shift and go to state 70
+
+    par_sinal                      shift and go to state 69
+
+state 67
+
+    (7) corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO . DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR
+
+    DOIS_PONTOS     shift and go to state 71
+
+
+state 68
+
+    (20) rua_sinal_ref -> KW_SINAL KW_EM MEDIDA_M ID PONTO_VIRGULA .
+
+    CHAVE_DIR       reduce using rule 20 (rua_sinal_ref -> KW_SINAL KW_EM MEDIDA_M ID PONTO_VIRGULA .)
+    KW_TAMANHO      reduce using rule 20 (rua_sinal_ref -> KW_SINAL KW_EM MEDIDA_M ID PONTO_VIRGULA .)
+    KW_MAO          reduce using rule 20 (rua_sinal_ref -> KW_SINAL KW_EM MEDIDA_M ID PONTO_VIRGULA .)
+    KW_SINAL        reduce using rule 20 (rua_sinal_ref -> KW_SINAL KW_EM MEDIDA_M ID PONTO_VIRGULA .)
+
+
+state 69
+
+    (34) cruzamento_par_com_corpo -> KW_DE STRING KW_PARA STRING CHAVE_ESQ par_sinal . CHAVE_DIR
+
+    CHAVE_DIR       shift and go to state 72
+
+
+state 70
+
+    (35) par_sinal -> KW_SINAL . ID PONTO_VIRGULA
+    (36) par_sinal -> KW_SINAL . corpo_sinal
+    (7) corpo_sinal -> . CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR
+
+    ID              shift and go to state 73
+    CHAVE_ESQ       shift and go to state 15
+
+    corpo_sinal                    shift and go to state 74
+
+state 71
+
+    (7) corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS . TEMPO_S PONTO_VIRGULA CHAVE_DIR
+
+    TEMPO_S         shift and go to state 75
+
+
+state 72
+
+    (34) cruzamento_par_com_corpo -> KW_DE STRING KW_PARA STRING CHAVE_ESQ par_sinal CHAVE_DIR .
+
+    CHAVE_DIR       reduce using rule 34 (cruzamento_par_com_corpo -> KW_DE STRING KW_PARA STRING CHAVE_ESQ par_sinal CHAVE_DIR .)
+    STRING          reduce using rule 34 (cruzamento_par_com_corpo -> KW_DE STRING KW_PARA STRING CHAVE_ESQ par_sinal CHAVE_DIR .)
+    KW_DE           reduce using rule 34 (cruzamento_par_com_corpo -> KW_DE STRING KW_PARA STRING CHAVE_ESQ par_sinal CHAVE_DIR .)
+    KW_SINAL        reduce using rule 34 (cruzamento_par_com_corpo -> KW_DE STRING KW_PARA STRING CHAVE_ESQ par_sinal CHAVE_DIR .)
+
+
+state 73
+
+    (35) par_sinal -> KW_SINAL ID . PONTO_VIRGULA
+
+    PONTO_VIRGULA   shift and go to state 76
+
+
+state 74
+
+    (36) par_sinal -> KW_SINAL corpo_sinal .
+
+    CHAVE_DIR       reduce using rule 36 (par_sinal -> KW_SINAL corpo_sinal .)
+
+
+state 75
+
+    (7) corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S . PONTO_VIRGULA CHAVE_DIR
+
+    PONTO_VIRGULA   shift and go to state 77
+
+
+state 76
+
+    (35) par_sinal -> KW_SINAL ID PONTO_VIRGULA .
+
+    CHAVE_DIR       reduce using rule 35 (par_sinal -> KW_SINAL ID PONTO_VIRGULA .)
+
+
+state 77
+
+    (7) corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA . CHAVE_DIR
+
+    CHAVE_DIR       shift and go to state 78
+
+
+state 78
+
+    (7) corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR .
+
+    KW_SINAL        reduce using rule 7 (corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR .)
+    KW_RUA          reduce using rule 7 (corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR .)
+    KW_CRUZAMENTO   reduce using rule 7 (corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR .)
+    $end            reduce using rule 7 (corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR .)
+    CHAVE_DIR       reduce using rule 7 (corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR .)
+    STRING          reduce using rule 7 (corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR .)
+    KW_DE           reduce using rule 7 (corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR .)
+    KW_TAMANHO      reduce using rule 7 (corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR .)
+    KW_MAO          reduce using rule 7 (corpo_sinal -> CHAVE_ESQ KW_VERDE DOIS_PONTOS TEMPO_S PONTO_VIRGULA KW_VERMELHO DOIS_PONTOS TEMPO_S PONTO_VIRGULA CHAVE_DIR .)
+
