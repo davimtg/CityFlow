@@ -222,6 +222,11 @@ Abra o arquivo `visualizador_grafo.html` no navegador, cole o conteúdo do `.jso
 - Ruas de mão única são exibidas com seta direcional.
 - Ruas de mão dupla são exibidas com setas nos dois sentidos.
 
+**Exemplo do grafo gerado:**
+![Exemplo do Grafo Gerado](imagens/exemplo_grafo.jpg)
+
+---
+
 ## 🤖 Uso de Inteligência Artificial
 
 Atendendo aos requisitos da disciplina, o desenvolvimento deste projeto contou com o auxílio de ferramentas de Inteligência Artificial (Claude e Gemini) para tirar dúvidas pontuais sobre a biblioteca PLY e estruturar a lógica do visualizador web 
