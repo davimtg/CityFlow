@@ -221,3 +221,29 @@ Abra o arquivo `visualizador_grafo.html` no navegador, cole o conteúdo do `.jso
 - Cada aresta representa uma rua, com seu nome e sinais internos exibidos como rótulo.
 - Ruas de mão única são exibidas com seta direcional.
 - Ruas de mão dupla são exibidas com setas nos dois sentidos.
+
+## 🤖 Uso de Inteligência Artificial
+
+Atendendo aos requisitos da disciplina, o desenvolvimento deste projeto contou com o auxílio de ferramentas de Inteligência Artificial (Claude e Gemini) para tirar dúvidas pontuais sobre a biblioteca PLY e estruturar a lógica do visualizador web 
+
+As decisões de design de software, modelagem da gramática, arquitetura em duas passagens semânticas e a criação do roteiro de testes foram desenvolvidas de forma autoral. As modificações sugeridas pelas IAs foram adaptadas e documentadas com comentários no código-fonte.
+
+Abaixo estão os prompts exatos utilizados durante o ciclo de desenvolvimento:
+
+### Prompts utilizados
+**Pesquisa e Estruturação do PLY:**
+* "Quais são os principais geradores de analisadores léxicos e sintáticos disponíveis em Python? Me explica como funciona o PLY (Python Lex-Yacc)"
+* "Me dá um exemplo básico de calculadora usando PLY em Python, com analisador léxico e sintático separados."
+
+**Modelagem e Análise Léxica:**
+* "Quero criar uma linguagem de descrição de malha urbana chamada CityFlow. Ela deve permitir declarar ruas com tamanho, sentido de mão (dupla ou única) e sinais de trânsito em posições específicas, além de cruzamentos entre ruas com controle de fluxo. Como eu modelaria essa gramática?"
+* "Como declarar tokens no PLY para unidades como 300m e 45s, convertendo automaticamente para inteiro durante a análise léxica, sem deixar o m e o s no valor?"
+* "Como reportar erros léxicos com número de linha e coluna no PLY?"
+
+**Análise Sintática e Semântica:**
+* "Como estruturar produções no PLY para uma lista de itens recursiva à esquerda, como múltiplas declarações de rua dentro de um arquivo?"
+* "Como construir uma AST usando tuplas no PLY, retornando p[0] em cada produção com a estrutura da árvore?"
+* "Como percorrer uma AST em Python em duas passagens: a primeira para registrar ruas e sinais globais declarados, e a segunda para validar cruzamentos que referenciam essas ruas?"
+
+**Visualizador do Grafo:**
+* "Como usar a biblioteca vis-network em JavaScript para visualizar um grafo de ruas e cruzamentos a partir de um JSON? Cada cruzamento deve ser um nó e cada rua compartilhada entre dois cruzamentos deve ser uma aresta com o nome da rua como rótulo."
