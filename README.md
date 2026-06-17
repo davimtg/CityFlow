@@ -1,4 +1,4 @@
-# Compilador `.cf` — City File
+# Compilador CityFlow
 
 Compilador de uma linguagem de descrição de malha urbana. Um arquivo `.cf` descreve ruas, sinais de trânsito e cruzamentos de um bairro. O compilador realiza análise léxica, sintática e semântica, e gera como saída um arquivo `.json` estruturado.
 
