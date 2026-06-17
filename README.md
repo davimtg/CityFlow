@@ -172,7 +172,13 @@ Erros semânticos encerram a compilação com mensagem descritiva antes de grava
 | par_sinal → sinal corpo_sinal | { par_sinal.node = ('sinal_inline', corpo_sinal.node) } |
 
 ---
+## Árvores de Derivação
 
+**Árvore de Derivação (Parse Tree):**
+![Árvore de Derivação](imagens/arvore_derivacao.svg)
+
+**Árvore de Derivação Anotada (Annotated Parse Tree):**
+![Árvore de Derivação Anotada](imagens/arvore_derivacao_anotada.svg)
 ## Saída JSON
 
 O compilador gera um `.json` com a seguinte estrutura:

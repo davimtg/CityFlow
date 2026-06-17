@@ -1,70 +1,80 @@
 /* =========================================
-   Simulação: Região da Avenida Paulista
+   Simulação: Região do Maracanã e CEFET-RJ
    ========================================= */
 
 /* sinais reutilizáveis */
 sinal semaforo_padrao { verde: 45s; vermelho: 30s; }
 sinal semaforo_rapido { verde: 20s; vermelho: 15s; }
+sinal semaforo_longo  { verde: 60s; vermelho: 20s; } /* Ideal para vias expressas */
 
 /* ---- ruas ---- */
 
-rua "Avenida Paulista" {
-    tamanho: 3000m;
+rua "Avenida Maracanã" {
+    tamanho: 4000m;
     mao: dupla;
 
-    sinal em 500m semaforo_padrao;
-    sinal em 1500m { verde: 60s; vermelho: 40s; }
-    sinal em 2500m semaforo_padrao;
+    sinal em 1000m semaforo_padrao;
+    sinal em 2000m { verde: 60s; vermelho: 40s; } /* Sinal em frente ao Estádio */
+    sinal em 3500m semaforo_longo;
 }
 
-rua "Rua Augusta" {
+rua "Rua General Canabarro" {
     tamanho: 800m;
     mao: dupla;
 
-    sinal em 400m semaforo_rapido;
+    /* Travessia de pedestres em frente ao portão principal do CEFET-RJ */
+    sinal em 400m semaforo_rapido; 
 }
 
-rua "Rua Consolação" {
+rua "Rua Professor Eurico Rabelo" {
     tamanho: 600m;
-    mao: unica;
+    mao: unica; /* Rua de mão única que contorna o Maracanã */
 }
 
-rua "Alameda Santos" {
-    tamanho: 1200m;
+rua "Rua São Francisco Xavier" {
+    tamanho: 2500m;
     mao: dupla;
+
+    sinal em 500m semaforo_padrao;
 }
 
 /* ---- cruzamentos ---- */
 
-/* cruzamento simples — fluxo livre entre as duas */
+/* Cruzamento 1: Esquina do CEFET-RJ (Canabarro x São Francisco Xavier) */
 cruzamento {
-    "Avenida Paulista" em 500m;
-    "Rua Augusta" em 0m;
+    "Rua General Canabarro" em 0m;
+    "Rua São Francisco Xavier" em 1200m;
 
+    /* Fluxo controlado pelo sinal padrão */
     sinal semaforo_padrao;
 }
 
-/* cruzamento com 3 ruas e fluxo restrito */
+/* Cruzamento 2: Acesso ao Maracanã com restrições em dia de jogo */
 cruzamento {
-    "Avenida Paulista" em 1500m;
-    "Rua Consolação" em 0m;
-    "Alameda Santos" em 300m;
+    "Avenida Maracanã" em 2000m;
+    "Rua Professor Eurico Rabelo" em 0m;
+    "Rua General Canabarro" em 800m;
 
-    /* só esses pares são permitidos */
-    de "Avenida Paulista" para "Rua Consolação";
-    de "Avenida Paulista" para "Alameda Santos" {
+    /* Permissões e regras de conversão */
+    de "Avenida Maracanã" para "Rua Professor Eurico Rabelo"; /* Acesso livre */
+    
+    de "Rua General Canabarro" para "Avenida Maracanã" {
+        /* Sinal rápido para quem sai do CEFET e pega a Av. Maracanã */
         sinal { verde: 25s; vermelho: 35s; }
     }
-    de "Alameda Santos" para "Avenida Paulista" {
+    
+    de "Rua Professor Eurico Rabelo" para "Avenida Maracanã" {
         sinal semaforo_rapido;
     }
 
-    /* default para pares sem sinal próprio */
+    /* Sinal padrão para rotas não especificadas acima */
     sinal semaforo_padrao;
 }
 
-/* cruzamento livre sem sinal */
+/* Cruzamento 3: Interseção secundária de fluxo contínuo (semáforo longo) */
 cruzamento {
-    "Rua Augusta" em 800m;
-    "Alameda Santos" em 0m;
+    "Avenida Maracanã" em 3500m;
+    "Rua São Francisco Xavier" em 2500m;
+    
+    sinal semaforo_longo;
 }

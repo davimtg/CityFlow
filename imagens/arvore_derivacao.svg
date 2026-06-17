@@ -1,0 +1,216 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1869pt" height="560pt" viewBox="0.00 0.00 1869.00 560.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 555.66)">
+<title>ParseTree</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-555.66 1864.81,-555.66 1864.81,4 -4,4"/>
+<!-- programa -->
+<g id="node1" class="node">
+<title>programa</title>
+<path fill="#f0f4f8" stroke="#2c3e50" stroke-width="1.5" d="M746.79,-551.66C746.79,-551.66 694.87,-551.66 694.87,-551.66 688.87,-551.66 682.87,-545.66 682.87,-539.66 682.87,-539.66 682.87,-527.66 682.87,-527.66 682.87,-521.66 688.87,-515.66 694.87,-515.66 694.87,-515.66 746.79,-515.66 746.79,-515.66 752.79,-515.66 758.79,-521.66 758.79,-527.66 758.79,-527.66 758.79,-539.66 758.79,-539.66 758.79,-545.66 752.79,-551.66 746.79,-551.66"/>
+<text xml:space="preserve" text-anchor="middle" x="720.83" y="-529.46" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">programa</text>
+</g>
+<!-- declaracao_lista -->
+<g id="node2" class="node">
+<title>declaracao_lista</title>
+<path fill="#f0f4f8" stroke="#2c3e50" stroke-width="1.5" d="M767.42,-457.66C767.42,-457.66 674.25,-457.66 674.25,-457.66 668.25,-457.66 662.25,-451.66 662.25,-445.66 662.25,-445.66 662.25,-433.66 662.25,-433.66 662.25,-427.66 668.25,-421.66 674.25,-421.66 674.25,-421.66 767.42,-421.66 767.42,-421.66 773.42,-421.66 779.42,-427.66 779.42,-433.66 779.42,-433.66 779.42,-445.66 779.42,-445.66 779.42,-451.66 773.42,-457.66 767.42,-457.66"/>
+<text xml:space="preserve" text-anchor="middle" x="720.83" y="-435.46" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">declaracao_lista</text>
+</g>
+<!-- programa&#45;&gt;declaracao_lista -->
+<g id="edge1" class="edge">
+<title>programa-&gt;declaracao_lista</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M720.83,-514.92C720.83,-502.2 720.83,-484.76 720.83,-469.98"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="724.33,-470.16 720.83,-460.16 717.33,-470.16 724.33,-470.16"/>
+</g>
+<!-- declaracao -->
+<g id="node3" class="node">
+<title>declaracao</title>
+<path fill="#f0f4f8" stroke="#2c3e50" stroke-width="1.5" d="M751.08,-363.66C751.08,-363.66 690.59,-363.66 690.59,-363.66 684.59,-363.66 678.59,-357.66 678.59,-351.66 678.59,-351.66 678.59,-339.66 678.59,-339.66 678.59,-333.66 684.59,-327.66 690.59,-327.66 690.59,-327.66 751.08,-327.66 751.08,-327.66 757.08,-327.66 763.08,-333.66 763.08,-339.66 763.08,-339.66 763.08,-351.66 763.08,-351.66 763.08,-357.66 757.08,-363.66 751.08,-363.66"/>
+<text xml:space="preserve" text-anchor="middle" x="720.83" y="-341.46" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">declaracao</text>
+</g>
+<!-- declaracao_lista&#45;&gt;declaracao -->
+<g id="edge2" class="edge">
+<title>declaracao_lista-&gt;declaracao</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M720.83,-420.92C720.83,-408.2 720.83,-390.76 720.83,-375.98"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="724.33,-376.16 720.83,-366.16 717.33,-376.16 724.33,-376.16"/>
+</g>
+<!-- decl_sinal_global -->
+<g id="node4" class="node">
+<title>decl_sinal_global</title>
+<path fill="#f0f4f8" stroke="#2c3e50" stroke-width="1.5" d="M770.54,-269.66C770.54,-269.66 671.13,-269.66 671.13,-269.66 665.13,-269.66 659.13,-263.66 659.13,-257.66 659.13,-257.66 659.13,-245.66 659.13,-245.66 659.13,-239.66 665.13,-233.66 671.13,-233.66 671.13,-233.66 770.54,-233.66 770.54,-233.66 776.54,-233.66 782.54,-239.66 782.54,-245.66 782.54,-245.66 782.54,-257.66 782.54,-257.66 782.54,-263.66 776.54,-269.66 770.54,-269.66"/>
+<text xml:space="preserve" text-anchor="middle" x="720.83" y="-247.46" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">decl_sinal_global</text>
+</g>
+<!-- declaracao&#45;&gt;decl_sinal_global -->
+<g id="edge3" class="edge">
+<title>declaracao-&gt;decl_sinal_global</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M720.83,-326.92C720.83,-314.2 720.83,-296.76 720.83,-281.98"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="724.33,-282.16 720.83,-272.16 717.33,-282.16 724.33,-282.16"/>
+</g>
+<!-- KW_SINAL -->
+<g id="node5" class="node">
+<title>KW_SINAL</title>
+<ellipse fill="#d6eaf8" stroke="#2c3e50" stroke-width="1.5" cx="530.83" cy="-146.25" rx="61.38" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="530.83" y="-150.45" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">KW_SINAL</text>
+<text xml:space="preserve" text-anchor="middle" x="530.83" y="-133.65" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">'sinal'</text>
+</g>
+<!-- decl_sinal_global&#45;&gt;KW_SINAL -->
+<g id="edge4" class="edge">
+<title>decl_sinal_global-&gt;KW_SINAL</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M688.6,-233.12C659.14,-217.09 615.12,-193.12 581.05,-174.58"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="582.88,-171.59 572.42,-169.88 579.53,-177.74 582.88,-171.59"/>
+</g>
+<!-- ID -->
+<g id="node6" class="node">
+<title>ID</title>
+<ellipse fill="#d6eaf8" stroke="#2c3e50" stroke-width="1.5" cx="720.83" cy="-146.25" rx="92.69" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="720.83" y="-150.45" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">ID</text>
+<text xml:space="preserve" text-anchor="middle" x="720.83" y="-133.65" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">'semaforo_padrao'</text>
+</g>
+<!-- decl_sinal_global&#45;&gt;ID -->
+<g id="edge5" class="edge">
+<title>decl_sinal_global-&gt;ID</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M720.83,-233.12C720.83,-220.72 720.83,-203.58 720.83,-187.87"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="724.33,-188.05 720.83,-178.05 717.33,-188.05 724.33,-188.05"/>
+</g>
+<!-- corpo_sinal -->
+<g id="node17" class="node">
+<title>corpo_sinal</title>
+<ellipse fill="#d6eaf8" stroke="#2c3e50" stroke-width="1.5" cx="909.83" cy="-146.25" rx="60.42" ry="18"/>
+<text xml:space="preserve" text-anchor="middle" x="909.83" y="-142.05" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">corpo_sinal</text>
+</g>
+<!-- decl_sinal_global&#45;&gt;corpo_sinal -->
+<g id="edge6" class="edge">
+<title>decl_sinal_global-&gt;corpo_sinal</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M752.89,-233.12C785.63,-215.21 836.46,-187.39 871.35,-168.3"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="872.95,-171.42 880.04,-163.55 869.59,-165.28 872.95,-171.42"/>
+</g>
+<!-- CHAVE_ESQ -->
+<g id="node7" class="node">
+<title>CHAVE_ESQ</title>
+<ellipse fill="#d6eaf8" stroke="#2c3e50" stroke-width="1.5" cx="71.83" cy="-29.42" rx="71.83" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="71.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">CHAVE_ESQ</text>
+<text xml:space="preserve" text-anchor="middle" x="71.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">'{'</text>
+</g>
+<!-- KW_VERDE -->
+<g id="node8" class="node">
+<title>KW_VERDE</title>
+<ellipse fill="#d6eaf8" stroke="#2c3e50" stroke-width="1.5" cx="246.83" cy="-29.42" rx="66.87" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="246.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">KW_VERDE</text>
+<text xml:space="preserve" text-anchor="middle" x="246.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">'verde'</text>
+</g>
+<!-- DOIS_PONTOS_1 -->
+<g id="node9" class="node">
+<title>DOIS_PONTOS_1</title>
+<ellipse fill="#d6eaf8" stroke="#2c3e50" stroke-width="1.5" cx="432.83" cy="-29.42" rx="82.82" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="432.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">DOIS_PONTOS</text>
+<text xml:space="preserve" text-anchor="middle" x="432.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">':'</text>
+</g>
+<!-- TEMPO_S_1 -->
+<g id="node10" class="node">
+<title>TEMPO_S_1</title>
+<ellipse fill="#d6eaf8" stroke="#2c3e50" stroke-width="1.5" cx="609.83" cy="-29.42" rx="58.62" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="609.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">TEMPO_S</text>
+<text xml:space="preserve" text-anchor="middle" x="609.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">45</text>
+</g>
+<!-- PONTO_VIRGULA_1 -->
+<g id="node11" class="node">
+<title>PONTO_VIRGULA_1</title>
+<ellipse fill="#d6eaf8" stroke="#2c3e50" stroke-width="1.5" cx="799.83" cy="-29.42" rx="95.48" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="799.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">PONTO_VIRGULA</text>
+<text xml:space="preserve" text-anchor="middle" x="799.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">';'</text>
+</g>
+<!-- KW_VERMELHO -->
+<g id="node12" class="node">
+<title>KW_VERMELHO</title>
+<ellipse fill="#d6eaf8" stroke="#2c3e50" stroke-width="1.5" cx="1019.83" cy="-29.42" rx="88.32" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="1019.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">KW_VERMELHO</text>
+<text xml:space="preserve" text-anchor="middle" x="1019.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">'vermelho'</text>
+</g>
+<!-- DOIS_PONTOS_2 -->
+<g id="node13" class="node">
+<title>DOIS_PONTOS_2</title>
+<ellipse fill="#d6eaf8" stroke="#2c3e50" stroke-width="1.5" cx="1226.83" cy="-29.42" rx="82.82" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="1226.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">DOIS_PONTOS</text>
+<text xml:space="preserve" text-anchor="middle" x="1226.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">':'</text>
+</g>
+<!-- TEMPO_S_2 -->
+<g id="node14" class="node">
+<title>TEMPO_S_2</title>
+<ellipse fill="#d6eaf8" stroke="#2c3e50" stroke-width="1.5" cx="1403.83" cy="-29.42" rx="58.62" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="1403.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">TEMPO_S</text>
+<text xml:space="preserve" text-anchor="middle" x="1403.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">30</text>
+</g>
+<!-- PONTO_VIRGULA_2 -->
+<g id="node15" class="node">
+<title>PONTO_VIRGULA_2</title>
+<ellipse fill="#d6eaf8" stroke="#2c3e50" stroke-width="1.5" cx="1593.83" cy="-29.42" rx="95.48" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="1593.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">PONTO_VIRGULA</text>
+<text xml:space="preserve" text-anchor="middle" x="1593.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">';'</text>
+</g>
+<!-- CHAVE_DIR -->
+<g id="node16" class="node">
+<title>CHAVE_DIR</title>
+<ellipse fill="#d6eaf8" stroke="#2c3e50" stroke-width="1.5" cx="1792.83" cy="-29.42" rx="67.97" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="1792.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">CHAVE_DIR</text>
+<text xml:space="preserve" text-anchor="middle" x="1792.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">'}'</text>
+</g>
+<!-- corpo_sinal&#45;&gt;CHAVE_ESQ -->
+<g id="edge7" class="edge">
+<title>corpo_sinal-&gt;CHAVE_ESQ</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M875.86,-130.66C862.38,-125.47 846.61,-120.1 831.83,-116.83 540.01,-52.23 455,-117.07 161.83,-58.83 153.66,-57.21 145.17,-55.11 136.83,-52.78"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="137.91,-49.45 127.33,-50.01 135.95,-56.17 137.91,-49.45"/>
+</g>
+<!-- corpo_sinal&#45;&gt;KW_VERDE -->
+<g id="edge8" class="edge">
+<title>corpo_sinal-&gt;KW_VERDE</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M875.8,-130.89C862.33,-125.72 846.56,-120.32 831.83,-116.83 614.14,-65.3 550.2,-107.45 331.83,-58.83 324.28,-57.15 316.46,-55.05 308.75,-52.76"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="309.91,-49.45 299.32,-49.83 307.83,-56.14 309.91,-49.45"/>
+</g>
+<!-- corpo_sinal&#45;&gt;DOIS_PONTOS_1 -->
+<g id="edge9" class="edge">
+<title>corpo_sinal-&gt;DOIS_PONTOS_1</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M874.49,-131.03C861.26,-126.07 846,-120.76 831.83,-116.83 701.39,-80.66 664.5,-90.25 532.83,-58.83 524.47,-56.84 515.76,-54.6 507.12,-52.28"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="508.15,-48.94 497.58,-49.68 506.31,-55.69 508.15,-48.94"/>
+</g>
+<!-- corpo_sinal&#45;&gt;TEMPO_S_1 -->
+<g id="edge10" class="edge">
+<title>corpo_sinal-&gt;TEMPO_S_1</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M873.35,-131.28C821.97,-111.62 727.8,-75.57 667.06,-52.32"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="668.41,-49.09 657.82,-48.78 665.91,-55.63 668.41,-49.09"/>
+</g>
+<!-- corpo_sinal&#45;&gt;PONTO_VIRGULA_1 -->
+<g id="edge11" class="edge">
+<title>corpo_sinal-&gt;PONTO_VIRGULA_1</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M893.6,-128.3C878.05,-112.07 854.1,-87.06 834.29,-66.39"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="837.07,-64.23 827.63,-59.43 832.02,-69.08 837.07,-64.23"/>
+</g>
+<!-- corpo_sinal&#45;&gt;KW_VERMELHO -->
+<g id="edge12" class="edge">
+<title>corpo_sinal-&gt;KW_VERMELHO</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M926.06,-128.3C941.61,-112.07 965.57,-87.06 985.37,-66.39"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="987.65,-69.08 992.04,-59.43 982.59,-64.23 987.65,-69.08"/>
+</g>
+<!-- corpo_sinal&#45;&gt;DOIS_PONTOS_2 -->
+<g id="edge13" class="edge">
+<title>corpo_sinal-&gt;DOIS_PONTOS_2</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M947.44,-131.62C999.38,-112.81 1093.95,-78.55 1158.55,-55.15"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="1159.53,-58.52 1167.74,-51.82 1157.14,-51.94 1159.53,-58.52"/>
+</g>
+<!-- corpo_sinal&#45;&gt;TEMPO_S_2 -->
+<g id="edge14" class="edge">
+<title>corpo_sinal-&gt;TEMPO_S_2</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M962.93,-136.97C1042.93,-123.89 1198.78,-96.06 1327.83,-58.83 1334.25,-56.98 1340.89,-54.84 1347.47,-52.58"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="1348.43,-55.95 1356.69,-49.31 1346.09,-49.36 1348.43,-55.95"/>
+</g>
+<!-- corpo_sinal&#45;&gt;PONTO_VIRGULA_2 -->
+<g id="edge15" class="edge">
+<title>corpo_sinal-&gt;PONTO_VIRGULA_2</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M965.66,-138.61C1068.23,-126.01 1293.33,-96.5 1480.83,-58.83 1490.63,-56.86 1500.86,-54.6 1510.98,-52.22"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="1511.66,-55.65 1520.57,-49.92 1510.03,-48.85 1511.66,-55.65"/>
+</g>
+<!-- corpo_sinal&#45;&gt;CHAVE_DIR -->
+<g id="edge16" class="edge">
+<title>corpo_sinal-&gt;CHAVE_DIR</title>
+<path fill="none" stroke="#7f8c8d" stroke-width="1.2" d="M970.01,-143.05C1103.87,-137.24 1435.82,-117.61 1706.83,-58.83 1714.47,-57.17 1722.39,-55.09 1730.19,-52.8"/>
+<polygon fill="#7f8c8d" stroke="#7f8c8d" stroke-width="1.2" points="1731.21,-56.15 1739.74,-49.87 1729.16,-49.46 1731.21,-56.15"/>
+</g>
+</g>
+</svg>

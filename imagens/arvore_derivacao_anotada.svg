@@ -1,0 +1,237 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1864pt" height="652pt" viewBox="0.00 0.00 1864.00 652.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 648.06)">
+<title>AnnotatedParseTree</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-648.06 1859.81,-648.06 1859.81,4 -4,4"/>
+<!-- programa -->
+<g id="node1" class="node">
+<title>programa</title>
+<polygon fill="#fcf3cf" stroke="#f1c40f" points="760.47,-644.06 615.2,-644.06 615.2,-602.46 766.47,-602.46 766.47,-638.06 760.47,-644.06"/>
+<polyline fill="none" stroke="#f1c40f" points="760.47,-644.06 760.47,-638.06"/>
+<polyline fill="none" stroke="#f1c40f" points="766.47,-638.06 760.47,-638.06"/>
+<text xml:space="preserve" text-anchor="middle" x="690.83" y="-627.46" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">programa</text>
+<text xml:space="preserve" text-anchor="middle" x="690.83" y="-610.66" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">[val: ('programa', [...])]</text>
+</g>
+<!-- declaracao_lista -->
+<g id="node2" class="node">
+<title>declaracao_lista</title>
+<polygon fill="#fcf3cf" stroke="#f1c40f" points="767.48,-530.46 608.18,-530.46 608.18,-488.86 773.48,-488.86 773.48,-524.46 767.48,-530.46"/>
+<polyline fill="none" stroke="#f1c40f" points="767.48,-530.46 767.48,-524.46"/>
+<polyline fill="none" stroke="#f1c40f" points="773.48,-524.46 767.48,-524.46"/>
+<text xml:space="preserve" text-anchor="middle" x="690.83" y="-513.86" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">declaracao_lista</text>
+<text xml:space="preserve" text-anchor="middle" x="690.83" y="-497.06" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">[val: [('sinal_global', ...)]]</text>
+</g>
+<!-- programa&#45;&gt;declaracao_lista -->
+<g id="edge1" class="edge">
+<title>programa-&gt;declaracao_lista</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M690.83,-602.05C690.83,-584.83 690.83,-559.84 690.83,-540.35"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="693.63,-540.54 690.83,-532.54 688.03,-540.54 693.63,-540.54"/>
+</g>
+<!-- declaracao -->
+<g id="node3" class="node">
+<title>declaracao</title>
+<polygon fill="#fcf3cf" stroke="#f1c40f" points="763.59,-416.86 612.07,-416.86 612.07,-375.26 769.59,-375.26 769.59,-410.86 763.59,-416.86"/>
+<polyline fill="none" stroke="#f1c40f" points="763.59,-416.86 763.59,-410.86"/>
+<polyline fill="none" stroke="#f1c40f" points="769.59,-410.86 763.59,-410.86"/>
+<text xml:space="preserve" text-anchor="middle" x="690.83" y="-400.26" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">declaracao</text>
+<text xml:space="preserve" text-anchor="middle" x="690.83" y="-383.46" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">[val: ('sinal_global', ...)]</text>
+</g>
+<!-- declaracao_lista&#45;&gt;declaracao -->
+<g id="edge2" class="edge">
+<title>declaracao_lista-&gt;declaracao</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M690.83,-488.45C690.83,-471.23 690.83,-446.24 690.83,-426.75"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="693.63,-426.94 690.83,-418.94 688.03,-426.94 693.63,-426.94"/>
+</g>
+<!-- decl_sinal_global -->
+<g id="node4" class="node">
+<title>decl_sinal_global</title>
+<polygon fill="#fcf3cf" stroke="#f1c40f" points="825.02,-303.26 550.64,-303.26 550.64,-261.66 831.02,-261.66 831.02,-297.26 825.02,-303.26"/>
+<polyline fill="none" stroke="#f1c40f" points="825.02,-303.26 825.02,-297.26"/>
+<polyline fill="none" stroke="#f1c40f" points="831.02,-297.26 825.02,-297.26"/>
+<text xml:space="preserve" text-anchor="middle" x="690.83" y="-286.66" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">decl_sinal_global</text>
+<text xml:space="preserve" text-anchor="middle" x="690.83" y="-269.86" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">[val: ('sinal_global', 'semaforo_padrao', ...)]</text>
+</g>
+<!-- declaracao&#45;&gt;decl_sinal_global -->
+<g id="edge3" class="edge">
+<title>declaracao-&gt;decl_sinal_global</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M690.83,-374.85C690.83,-357.63 690.83,-332.64 690.83,-313.15"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="693.63,-313.34 690.83,-305.34 688.03,-313.34 693.63,-313.34"/>
+</g>
+<!-- ID -->
+<g id="node5" class="node">
+<title>ID</title>
+<polygon fill="#d5f5e3" stroke="#2ecc71" points="767.1,-181.05 608.56,-181.05 608.56,-139.45 773.1,-139.45 773.1,-175.05 767.1,-181.05"/>
+<polyline fill="none" stroke="#2ecc71" points="767.1,-181.05 767.1,-175.05"/>
+<polyline fill="none" stroke="#2ecc71" points="773.1,-175.05 767.1,-175.05"/>
+<text xml:space="preserve" text-anchor="middle" x="690.83" y="-164.45" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">ID</text>
+<text xml:space="preserve" text-anchor="middle" x="690.83" y="-147.65" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">[val: 'semaforo_padrao']</text>
+</g>
+<!-- decl_sinal_global&#45;&gt;ID -->
+<g id="edge5" class="edge">
+<title>decl_sinal_global-&gt;ID</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M690.83,-261.34C690.83,-242.18 690.83,-213.11 690.83,-191.22"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="693.63,-191.25 690.83,-183.25 688.03,-191.25 693.63,-191.25"/>
+</g>
+<!-- corpo_sinal -->
+<g id="node6" class="node">
+<title>corpo_sinal</title>
+<polygon fill="#d5f5e3" stroke="#2ecc71" points="992.05,-181.05 815.62,-181.05 815.62,-139.45 998.05,-139.45 998.05,-175.05 992.05,-181.05"/>
+<polyline fill="none" stroke="#2ecc71" points="992.05,-181.05 992.05,-175.05"/>
+<polyline fill="none" stroke="#2ecc71" points="998.05,-175.05 992.05,-175.05"/>
+<text xml:space="preserve" text-anchor="middle" x="906.83" y="-164.45" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">corpo_sinal</text>
+<text xml:space="preserve" text-anchor="middle" x="906.83" y="-147.65" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">[val: ('corpo_sinal', 45, 30)]</text>
+</g>
+<!-- decl_sinal_global&#45;&gt;corpo_sinal -->
+<g id="edge6" class="edge">
+<title>decl_sinal_global-&gt;corpo_sinal</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M726.99,-261.34C764.13,-240.67 822.03,-208.44 862.05,-186.17"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="863.34,-188.65 868.97,-182.32 860.62,-183.76 863.34,-188.65"/>
+</g>
+<!-- KW_SINAL -->
+<g id="node9" class="node">
+<title>KW_SINAL</title>
+<ellipse fill="#ecf0f1" stroke="#bdc3c7" cx="503.83" cy="-160.25" rx="61.38" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="503.83" y="-164.45" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">KW_SINAL</text>
+<text xml:space="preserve" text-anchor="middle" x="503.83" y="-147.65" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">'sinal'</text>
+</g>
+<!-- decl_sinal_global&#45;&gt;KW_SINAL -->
+<g id="edge4" class="edge">
+<title>decl_sinal_global-&gt;KW_SINAL</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M659.53,-261.34C628.92,-241.66 582.04,-211.52 547.71,-189.46"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="549.48,-187.27 541.24,-185.3 546.46,-191.98 549.48,-187.27"/>
+</g>
+<!-- TEMPO_S_1 -->
+<g id="node7" class="node">
+<title>TEMPO_S_1</title>
+<polygon fill="#d5f5e3" stroke="#2ecc71" points="649.28,-50.22 572.38,-50.22 572.38,-8.62 655.28,-8.62 655.28,-44.22 649.28,-50.22"/>
+<polyline fill="none" stroke="#2ecc71" points="649.28,-50.22 649.28,-44.22"/>
+<polyline fill="none" stroke="#2ecc71" points="655.28,-44.22 649.28,-44.22"/>
+<text xml:space="preserve" text-anchor="middle" x="613.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">TEMPO_S</text>
+<text xml:space="preserve" text-anchor="middle" x="613.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">[val: 45]</text>
+</g>
+<!-- corpo_sinal&#45;&gt;TEMPO_S_1 -->
+<g id="edge10" class="edge">
+<title>corpo_sinal-&gt;TEMPO_S_1</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M860.07,-139.03C813.54,-118.86 740.15,-86.93 676.83,-58.83 672.73,-57.01 668.48,-55.12 664.22,-53.21"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="665.58,-50.75 657.14,-50.03 663.29,-55.86 665.58,-50.75"/>
+</g>
+<!-- TEMPO_S_2 -->
+<g id="node8" class="node">
+<title>TEMPO_S_2</title>
+<polygon fill="#d5f5e3" stroke="#2ecc71" points="1437.28,-50.22 1360.38,-50.22 1360.38,-8.62 1443.28,-8.62 1443.28,-44.22 1437.28,-50.22"/>
+<polyline fill="none" stroke="#2ecc71" points="1437.28,-50.22 1437.28,-44.22"/>
+<polyline fill="none" stroke="#2ecc71" points="1443.28,-44.22 1437.28,-44.22"/>
+<text xml:space="preserve" text-anchor="middle" x="1401.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">TEMPO_S</text>
+<text xml:space="preserve" text-anchor="middle" x="1401.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">[val: 30]</text>
+</g>
+<!-- corpo_sinal&#45;&gt;TEMPO_S_2 -->
+<g id="edge14" class="edge">
+<title>corpo_sinal-&gt;TEMPO_S_2</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M998.46,-143.34C1086.91,-126.73 1223.95,-97.68 1338.83,-58.83 1342.84,-57.48 1346.94,-55.95 1351.03,-54.34"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="1351.91,-57 1358.25,-51.37 1349.78,-51.82 1351.91,-57"/>
+</g>
+<!-- CHAVE_ESQ -->
+<g id="node10" class="node">
+<title>CHAVE_ESQ</title>
+<ellipse fill="#ecf0f1" stroke="#bdc3c7" cx="71.83" cy="-29.42" rx="71.83" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="71.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">CHAVE_ESQ</text>
+<text xml:space="preserve" text-anchor="middle" x="71.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">'{'</text>
+</g>
+<!-- corpo_sinal&#45;&gt;CHAVE_ESQ -->
+<g id="edge7" class="edge">
+<title>corpo_sinal-&gt;CHAVE_ESQ</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M832.74,-138.96C820.15,-135.94 807.16,-133.09 794.83,-130.83 518.06,-80.12 441.39,-115.77 165.83,-58.83 156.09,-56.82 145.9,-54.25 135.99,-51.48"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="136.79,-48.79 128.32,-49.27 135.24,-54.17 136.79,-48.79"/>
+</g>
+<!-- KW_VERDE -->
+<g id="node11" class="node">
+<title>KW_VERDE</title>
+<ellipse fill="#ecf0f1" stroke="#bdc3c7" cx="253.83" cy="-29.42" rx="66.87" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="253.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">KW_VERDE</text>
+<text xml:space="preserve" text-anchor="middle" x="253.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">'verde'</text>
+</g>
+<!-- corpo_sinal&#45;&gt;KW_VERDE -->
+<g id="edge8" class="edge">
+<title>corpo_sinal-&gt;KW_VERDE</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M830.83,-138.98C818.83,-136.06 806.52,-133.24 794.83,-130.83 595.6,-89.78 540.73,-105.9 342.83,-58.83 333.72,-56.66 324.19,-54.03 314.89,-51.25"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="315.91,-48.63 307.44,-48.96 314.26,-53.98 315.91,-48.63"/>
+</g>
+<!-- DOIS_PONTOS_1 -->
+<g id="node12" class="node">
+<title>DOIS_PONTOS_1</title>
+<ellipse fill="#ecf0f1" stroke="#bdc3c7" cx="446.83" cy="-29.42" rx="82.82" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="446.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">DOIS_PONTOS</text>
+<text xml:space="preserve" text-anchor="middle" x="446.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">':'</text>
+</g>
+<!-- corpo_sinal&#45;&gt;DOIS_PONTOS_1 -->
+<g id="edge9" class="edge">
+<title>corpo_sinal-&gt;DOIS_PONTOS_1</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M834.45,-138.98C748.64,-114.94 606.44,-75.12 520.2,-50.96"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="521.21,-48.34 512.75,-48.88 519.7,-53.73 521.21,-48.34"/>
+</g>
+<!-- PONTO_VIRGULA_1 -->
+<g id="node13" class="node">
+<title>PONTO_VIRGULA_1</title>
+<ellipse fill="#ecf0f1" stroke="#bdc3c7" cx="793.83" cy="-29.42" rx="95.48" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="793.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">PONTO_VIRGULA</text>
+<text xml:space="preserve" text-anchor="middle" x="793.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">';'</text>
+</g>
+<!-- corpo_sinal&#45;&gt;PONTO_VIRGULA_1 -->
+<g id="edge11" class="edge">
+<title>corpo_sinal-&gt;PONTO_VIRGULA_1</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M889.18,-139.12C871.85,-119.36 845.08,-88.84 824.31,-65.16"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="826.65,-63.59 819.27,-59.42 822.44,-67.28 826.65,-63.59"/>
+</g>
+<!-- KW_VERMELHO -->
+<g id="node14" class="node">
+<title>KW_VERMELHO</title>
+<ellipse fill="#ecf0f1" stroke="#bdc3c7" cx="1020.83" cy="-29.42" rx="88.32" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="1020.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">KW_VERMELHO</text>
+<text xml:space="preserve" text-anchor="middle" x="1020.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">'vermelho'</text>
+</g>
+<!-- corpo_sinal&#45;&gt;KW_VERMELHO -->
+<g id="edge12" class="edge">
+<title>corpo_sinal-&gt;KW_VERMELHO</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M924.64,-139.12C942.12,-119.36 969.13,-88.84 990.09,-65.16"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="991.97,-67.26 995.17,-59.41 987.77,-63.55 991.97,-67.26"/>
+</g>
+<!-- DOIS_PONTOS_2 -->
+<g id="node15" class="node">
+<title>DOIS_PONTOS_2</title>
+<ellipse fill="#ecf0f1" stroke="#bdc3c7" cx="1234.83" cy="-29.42" rx="82.82" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="1234.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">DOIS_PONTOS</text>
+<text xml:space="preserve" text-anchor="middle" x="1234.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">':'</text>
+</g>
+<!-- corpo_sinal&#45;&gt;DOIS_PONTOS_2 -->
+<g id="edge13" class="edge">
+<title>corpo_sinal-&gt;DOIS_PONTOS_2</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M958.44,-138.98C1016.05,-116.35 1109.29,-79.72 1171.33,-55.36"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="1172.13,-58.05 1178.55,-52.52 1170.08,-52.84 1172.13,-58.05"/>
+</g>
+<!-- PONTO_VIRGULA_2 -->
+<g id="node16" class="node">
+<title>PONTO_VIRGULA_2</title>
+<ellipse fill="#ecf0f1" stroke="#bdc3c7" cx="1581.83" cy="-29.42" rx="95.48" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="1581.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">PONTO_VIRGULA</text>
+<text xml:space="preserve" text-anchor="middle" x="1581.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">';'</text>
+</g>
+<!-- corpo_sinal&#45;&gt;PONTO_VIRGULA_2 -->
+<g id="edge15" class="edge">
+<title>corpo_sinal-&gt;PONTO_VIRGULA_2</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M998.5,-144.49C1109.33,-126.25 1301.35,-93.36 1464.83,-58.83 1476.13,-56.45 1488,-53.77 1499.66,-51.03"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="1500.06,-53.82 1507.2,-49.25 1498.77,-48.37 1500.06,-53.82"/>
+</g>
+<!-- CHAVE_DIR -->
+<g id="node17" class="node">
+<title>CHAVE_DIR</title>
+<ellipse fill="#ecf0f1" stroke="#bdc3c7" cx="1787.83" cy="-29.42" rx="67.97" ry="29.42"/>
+<text xml:space="preserve" text-anchor="middle" x="1787.83" y="-33.62" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">CHAVE_DIR</text>
+<text xml:space="preserve" text-anchor="middle" x="1787.83" y="-16.82" font-family="Helvetica,sans-Serif" font-size="14.00" fill="#2c3e50">'}'</text>
+</g>
+<!-- corpo_sinal&#45;&gt;CHAVE_DIR -->
+<g id="edge16" class="edge">
+<title>corpo_sinal-&gt;CHAVE_DIR</title>
+<path fill="none" stroke="#34495e" stroke-width="1.2" d="M998.33,-153.11C1146.76,-141.94 1448.64,-114.14 1698.83,-58.83 1707.98,-56.81 1717.53,-54.25 1726.83,-51.51"/>
+<polygon fill="#34495e" stroke="#34495e" stroke-width="1.2" points="1727.45,-54.25 1734.29,-49.24 1725.82,-48.89 1727.45,-54.25"/>
+</g>
+</g>
+</svg>
